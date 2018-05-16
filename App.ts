@@ -3,7 +3,7 @@ import * as request from 'request'
 const url = "https://fixnet-api.salt.ch/api/AddressScoring"
 
 const input = process.argv[2]
-const parts: string[] = input.replace(",", "").replace(/\s\s+/g, ' ').split(" ")
+const parts: string[] = input.replace(",", "").replace(/\s\s+/g, ' ').replace("\n", " ").split(" ")
 
 const rq = {
     street: parts[0],
