@@ -6,12 +6,12 @@ tsc
 # Run
 ```
 # address format: <street> <house-number>, <zip> <city> ex. Caspar-Wüst-Strasse 38, 8052 Zürich
-node build/App.js <address>
+./fiber.sh <address>
 ```
 
-# Example
+# Examples
 ```
-$ node build/App.js "Caspar-Wüst-Strasse 38, 8052 Zürich"
+$ ./fiber.sh "Definitely-Has-Fiber-Street 38, 8052 Zürich"
 { result_count: 1,
   results:
    [ { infos: [Object],
@@ -19,12 +19,20 @@ $ node build/App.js "Caspar-Wüst-Strasse 38, 8052 Zürich"
        source: 'ALEX',
        ordering: 'ALEX',
        house_number: '38',
-       street_name: 'Caspar-Wüst-Strasse',
+       street_name: 'Definitely-Has-Fiber-Street',
        city: 'Zürich ',
        zip_code: '8052' } ],
   qualiResultState: true }
   
   
-$ node build/App.js "No-Fiber-Street 38, 8052 Zürich"
+$ ./fiber.sh "No-Fiber-Street 38, 8052 Zürich"
+{ result_count: 0, results: [], qualiResultState: true }
+
+$ ./fiber.sh "Long
+Street
+With
+New lines 38
+
+8052 Zürich"
 { result_count: 0, results: [], qualiResultState: true }
 ```
